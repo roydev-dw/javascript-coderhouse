@@ -26,7 +26,6 @@ const eliminarTarea = (indice) => {
   }
 } 
 
-
 function menu(){
 
   let ciclo = true;
