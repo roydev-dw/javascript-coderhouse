@@ -1,8 +1,8 @@
 let tareas = [];
 
 function agregarTarea(tarea) {
-    tareas.push(tarea);
-    alert('Se ha agregado la tarea "' + tarea + '" exitosamente.');
+  tareas.push(tarea);
+  alert('Se ha agregado la tarea "' + tarea + '" exitosamente.');
 }
 
 function verTareas(listaTareas) {
@@ -11,7 +11,7 @@ function verTareas(listaTareas) {
   if (listaTareas.length === 0) {
     console.log('No hay ningúna tarea en la lista.');
   } else {
-    for (let i = 0; i < listaTareas.length; i++){
+    for (let i = 0; i < listaTareas.length; i++) {
       console.log((i + 1) + '. ' + listaTareas[i]);
     }
   }
@@ -19,18 +19,18 @@ function verTareas(listaTareas) {
 
 const eliminarTarea = (indice) => {
   if (indice > 0 && indice <= tareas.length) {
-    let tareaEliminada = tareas.splice(indice -1, 1);
+    let tareaEliminada = tareas.splice(indice - 1, 1);
     alert('La tarea ' + tareaEliminada + ', ha sido eliminada exitosamente.');
   } else {
     alert('El número de tareas ingresado no es válido.');
   }
-} 
+}
 
-function menu(){
+function menu() {
 
   let ciclo = true;
 
-  while (ciclo){
+  while (ciclo) {
 
     opcionUsuario = parseInt(prompt('Seleccione una opción:\n1. Agregar tarea\n2. Ver tareas\n3. Eliminar tarea\n4. Salir'));
 
@@ -51,8 +51,11 @@ function menu(){
         break;
 
       case 4:
-        alert('*** Gracias por usar ToDo List ***')
-        ciclo = false
+        let confirmarSalida = confirm('¿Desea salir de ToDo List?');
+        if (confirmarSalida) {
+          alert('*** Gracias por usar ToDo List ***');
+          ciclo = false
+        }
         break;
 
       default:
